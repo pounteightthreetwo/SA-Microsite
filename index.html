@@ -1,139 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Test Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background-color: #f5f5f7;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaun A – Creative Enablement Microsite</title>
 
-        header {
-            background: #1e1e2f;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-        }
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1023;
+      --accent: #ff8a3c;
+      --accent-soft: rgba(255, 138, 60, 0.14);
+      --accent-2: #35c4ff;
+      --text-main: #f5f5f7;
+      --text-muted: #b3b7c6;
+      --card-bg: #111528;
+      --border-soft: #22263a;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.4);
+    }
 
-        header p {
-            font-size: 20px;
-            opacity: 0.8;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #18213d, #050816 55%);
+      color: var(--text-main);
+    }
 
-        h2 {
-            font-size: 32px;
-            color: #222;
-            border-bottom: 3px solid #4a8cff;
-            display: inline-block;
-            padding-bottom: 6px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .highlight-box {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
-        }
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .highlight-box p {
-            font-size: 18px;
-        }
+    header {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(5,8,22,0.94), rgba(5,8,22,0.76));
+      border-bottom: 1px solid var(--border-soft);
+    }
 
-        .image-sample {
-            margin-top: 20px;
-            text-align: center;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .image-sample img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
+    .brand-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 20%, #ffcf71, #ff8a3c 55%, #f05454);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      color: #050816;
+      box-shadow: 0 0 12px rgba(255, 138, 60, 0.6);
+    }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 14px 24px;
-            background: #4a8cff;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 18px;
-        }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
 
-        .button:hover {
-            background: #2f6ee0;
-        }
+    .brand-text strong {
+      font-size: 14px;
+      color: var(--text-main);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 14px;
-            color: #666;
-            margin-top: 40px;
-        }
-    </style>
+    nav {
+      display: flex;
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+      border-color: var(--accent-soft);
+      background: rgba(10, 16, 40, 0.85);
+      color: var(--accent-2);
+    }
+
+    .content {
+      flex: 1;
+      padding: 32px 18px 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 26px;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-2);
+    }
+
+    .hero-tag-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 9px rgba(255, 138, 60, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 40px);
+      margin-top: 16px;
+      line-height: 1.1;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      margin-top: 12px;
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 480px;
+    }
+
+    .hero-badges {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .hero-badge-pill {
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(9, 15, 39, 0.9);
+      color: var(--text-muted);
+    }
+
+    .hero-cta {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff8a3c, #ffcf71);
+      color: #1a1420;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(255, 138, 60, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-ghost {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(6, 9, 25, 0.9);
+      color: var(--text-muted);
+      font-size: 14px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1b2448, #0a0f23);
+      border-radius: 24px;
+      padding: 18px 18px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #ff8a3c, #35c4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: #050816;
+    }
+
+    .hero-card-main {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .hero-card-main strong {
+      color: var(--text-main);
+    }
+
+    .hero-card-tags {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 12, 31, 0.9);
+      color: var(--text-muted);
+    }
+
+    .hero-orbit {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      border-radius: 999px;
+      border: 1px dashed rgba(255, 255, 255, 0.08);
+      top: -12px;
+      right: -18px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 10px;
+      font-size: 11px;
+      color: var(--accent-2);
+    }
+
+    /* Sections */
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 18px;
+      border: 1px solid var(--border-soft);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .tag-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+    }
+
+    /* Playground/Video */
+
+    .playground {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .playground-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 16px;
+    }
+
+    .playground-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .playground-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      background: #000;
+    }
+
+    .video-wrapper iframe,
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 24px 16px 32px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent-2);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+      .hero, .playground {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 
 <body>
+<div class="page">
 
-<header>
-    <h1>Welcome to My Sample GitHub Page</h1>
-    <p>This is a basic test using HTML + CSS</p>
-</header>
-
-
-<div class="section">
-    <h2>Typography Test</h2>
-
-    <div class="highlight-box">
-        <p style="font-size: 22px;"><strong>Large text example</strong></p>
-        <p style="font-size: 18px;">This is medium-sized text to test formatting.</p>
-        <p style="font-size: 14px; color: #555;">This is smaller text with a softer color.</p>
-        <p><em>Italics example</em></p>
-        <p><strong>Bold example</strong></p>
-        <p><u>Underlined example</u></p>
-    </div>
-</div>
-
-
-<div class="section">
-    <h2>Image Test</h2>
-
-    <div class="image-sample">
-        <img src="https://picsum.photos/900/400" alt="Sample image">
+  <header>
+    <div class="brand">
+      <div class="brand-badge">S</div>
+      <div class="brand-text">
+        <strong>Shaun Andruchuk</strong>
+        <span>Enablement · AI · Creative</span>
+      </div>
     </div>
 
-    <p style="text-align:center;">Random placeholder image above (from picsum.photos)</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#playground">Playground</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Creative enablement in progress
+        </div>
+        <h1 class="hero-title">
+          Blending <span>emerging tech</span>, empathy, and systems thinking.
+        </h1>
+        <p class="hero-subtitle">
+          I design human-centered experiences, build smart processes, and use AI & data to make complex work feel calmer, clearer, and more intentional.
+        </p>
+
+        <div class="hero-badges">
+          <div class="hero-badge-pill">AI & workflow enablement</div>
+          <div class="hero-badge-pill">Focus groups & trend analysis</div>
+          <div class="hero-badge-pill">Storytelling & creative production</div>
+        </div>
+
+        <div class="hero-cta">
+          <button class="btn-primary" onclick="document.getElementById('playground').scrollIntoView({behavior:'smooth'})">
+            ✨ View the creative playground
+          </button>
+          <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            📬 Let’s connect
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div class="hero-avatar">A</div>
+              <div style="font-size: 12px;">
+                <strong>Systems + Story</strong><br />
+                Legal · CX · Creative
+              </div>
+            </div>
+            <div style="font-size:11px;color:var(--text-muted);text-align:right;">
+              Currently exploring<br/>what’s next.
+            </div>
+          </div>
+          <div class="hero-card-main">
+            I’ve spent years untangling complex problems, designing enablement strategies, and building experiences that feel a little more human—even when the tools are very technical.
+            <div class="hero-card-tags">
+              <span class="chip">AI in legal workflows</span>
+              <span class="chip">Executive-ready storytelling</span>
+              <span class="chip">Human-centric experimentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-orbit">
+          <span>Curious, observant, quietly obsessive about details.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / HIGHLIGHTS -->
+    <section id="skills" style="margin-bottom:40px;">
+      <h2 class="section-title">Core themes</h2>
+      <p class="section-sub">A few lanes where I tend to live and experiment.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Enablement & Strategy</h3>
+          <p>Designing metrics, processes, and playbooks that reduce friction and make it easier for teams to do their best work.</p>
+          <div class="tag-row">
+            <span class="tag">Metrics & KPIs</span>
+            <span class="tag">Process design</span>
+            <span class="tag">Executive readouts</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>AI & Emerging Tech</h3>
+          <p>Bringing tools like generative AI into workflows thoughtfully—focusing on clarity, ethics, and real-world usefulness.</p>
+          <div class="tag-row">
+            <span class="tag">GenAI for legal</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Change management</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Facilitation & Feedback</h3>
+          <p>Hosting focus groups, analyzing themes, and turning raw feedback into clear recommendations and experiments.</p>
+          <div class="tag-row">
+            <span class="tag">Focus groups</span>
+            <span class="tag">Trend analysis</span>
+            <span class="tag">Story-driven decks</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Creative & Visual</h3>
+          <p>Photography, video, and small creative experiments that help ideas feel more alive, not just more documented.</p>
+          <div class="tag-row">
+            <span class="tag">Photo & video</span>
+            <span class="tag">Microsites</span>
+            <span class="tag">Analog + digital</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYGROUND / VIDEO -->
+    <section id="playground" class="playground">
+      <div class="playground-card">
+        <h3>Creative playground</h3>
+        <p>This space can showcase a reel, a motion piece, or a short visual story—whatever best captures how you see and shape the world.</p>
+
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
+          ▶ Example: embedded video from YouTube or Vimeo:
+        </p>
+        <div class="video-wrapper" style="margin-bottom:16px;">
+          <!-- Replace the src with your own YouTube/Vimeo link -->
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Sample video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+          </iframe>
+        </div>
+
+        <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
+          ▶ Or: self-hosted video (place a file like <code>my-video.mp4</code> in your repo and uncomment below):
+        </p>
+
+        <!--
+        <div class="video-wrapper">
+          <video controls>
+            <source src="my-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        -->
+      </div>
+
+      <div class="playground-card">
+        <h3>Notes to future collaborators</h3>
+        <p>I care a lot about how things feel—meetings, tools, processes, and the space people are given to think and experiment.</p>
+        <p style="margin-top:6px;">If we work together, expect curiosity, a lot of questions, and a bias toward prototypes over slide decks.</p>
+        <div class="tag-row" style="margin-top:10px;">
+          <span class="tag">Thoughtful chaos → structured clarity</span>
+          <span class="tag">“What are we really solving?”</span>
+          <span class="tag">Always learning</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:40px;">
+      <h2 class="section-title">Let’s connect</h2>
+      <p class="section-sub">If this resonated, here’s where to find me.</p>
+
+      <div class="card" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
+        <div style="font-size:13px;color:var(--text-muted);flex:1 1 220px;">
+          Best reached via LinkedIn or email—happy to talk about roles, collaborations, or just compare notes on cameras and workflows.
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
+          <a class="btn-ghost" href="mailto:example@email.com">✉️ Email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Built as a tiny experimental space on GitHub Pages. <br/>
+    Feel free to poke around the code, remix, or say hello.
+  </footer>
+
 </div>
-
-
-<div class="section">
-    <h2>Button Test</h2>
-    <a class="button" href="https://www.linkedin.com" target="_blank">Visit LinkedIn</a>
-</div>
-
-
-<footer>
-    GitHub Pages Test Site • © 2025
-</footer>
-
 </body>
 </html>
