@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shaun A – Creative Enablement Microsite</title>
+  <title>Shaun Andruchuk – Enablement & AI Programs</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <!-- Google Font: Mulish -->
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -31,7 +31,7 @@
     }
 
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: radial-gradient(circle at top left, #18213d, #050816 55%);
       color: var(--text-main);
     }
@@ -41,7 +41,6 @@
       text-decoration: none;
     }
 
-    /* Layout */
     .page {
       min-height: 100vh;
       display: flex;
@@ -122,7 +121,7 @@
       margin: 0 auto;
     }
 
-    /* Hero */
+    /* HERO */
 
     .hero {
       display: grid;
@@ -167,7 +166,7 @@
       margin-top: 12px;
       font-size: 16px;
       color: var(--text-muted);
-      max-width: 480px;
+      max-width: 520px;
     }
 
     .hero-badges {
@@ -294,9 +293,8 @@
       padding-top: 10px;
       font-size: 11px;
       color: var(--accent-2);
+      text-align: center;
     }
-
-    /* Sections */
 
     .section-title {
       font-size: 20px;
@@ -348,8 +346,6 @@
       color: var(--text-muted);
     }
 
-    /* Playground/Video */
-
     .playground {
       margin-top: 40px;
       display: grid;
@@ -396,8 +392,6 @@
       border: 0;
     }
 
-    /* Footer */
-
     footer {
       padding: 24px 16px 32px;
       text-align: center;
@@ -408,8 +402,6 @@
     footer a {
       color: var(--accent-2);
     }
-
-    /* Responsive */
 
     @media (max-width: 800px) {
       .hero, .playground {
@@ -437,13 +429,13 @@
       <div class="brand-badge">S</div>
       <div class="brand-text">
         <strong>Shaun Andruchuk</strong>
-        <span>Enablement · AI · Creative</span>
+        <span>Enablement · AI · Systems & Story</span>
       </div>
     </div>
 
     <nav>
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
+      <a href="#highlights">Highlights</a>
       <a href="#playground">Playground</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -455,28 +447,31 @@
       <div>
         <div class="hero-tag">
           <span class="hero-tag-dot"></span>
-          Creative enablement in progress
+          Enablement · AI · Teaching
         </div>
         <h1 class="hero-title">
-          Blending <span>emerging tech</span>, empathy, and systems thinking.
+          Blending <span>systems thinking</span>, emerging tech, and human-centered teaching.
         </h1>
         <p class="hero-subtitle">
-          I design human-centered experiences, build smart processes, and use AI & data to make complex work feel calmer, clearer, and more intentional.
+          I design and deliver programs that help people understand, trust, and adopt new tools —
+          from AI platforms and legal workflows to creative and customer support ecosystems.
         </p>
 
         <div class="hero-badges">
           <div class="hero-badge-pill">AI & workflow enablement</div>
-          <div class="hero-badge-pill">Focus groups & trend analysis</div>
-          <div class="hero-badge-pill">Storytelling & creative production</div>
+          <div class="hero-badge-pill">Training & adoption strategy</div>
+          <div class="hero-badge-pill">Executive-facing storytelling</div>
         </div>
 
         <div class="hero-cta">
-          <button class="btn-primary" onclick="document.getElementById('playground').scrollIntoView({behavior:'smooth'})">
-            ✨ View the creative playground
-          </button>
-          <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-            📬 Let’s connect
-          </button>
+          <!-- TODO: replace # with a real resume link (e.g., your hosted PDF) -->
+          <a class="btn-primary" href="#" target="_blank">
+            📄 Download résumé
+          </a>
+          <!-- TODO: replace with your real LinkedIn URL -->
+          <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">
+            💼 View LinkedIn
+          </a>
         </div>
       </div>
 
@@ -486,86 +481,112 @@
             <div style="display:flex;align-items:center;gap:10px;">
               <div class="hero-avatar">A</div>
               <div style="font-size: 12px;">
-                <strong>Systems + Story</strong><br />
-                Legal · CX · Creative
+                <strong>Enablement & AI Programs</strong><br />
+                Fortune 50 telecom heritage
               </div>
             </div>
             <div style="font-size:11px;color:var(--text-muted);text-align:right;">
-              Currently exploring<br/>what’s next.
+              Roles & impact across<br/>legal, CX, and creative work.
             </div>
           </div>
           <div class="hero-card-main">
-            I’ve spent years untangling complex problems, designing enablement strategies, and building experiences that feel a little more human—even when the tools are very technical.
+            I bring a rare blend of fluency across systems, people, and design — shaped through
+            operations leadership, vendor partnerships, training, and creative production. I learn
+            platforms deeply so I can teach them clearly and help teams adopt them without friction.
             <div class="hero-card-tags">
               <span class="chip">AI in legal workflows</span>
-              <span class="chip">Executive-ready storytelling</span>
-              <span class="chip">Human-centric experimentation</span>
+              <span class="chip">Program operations</span>
+              <span class="chip">Training & video content</span>
             </div>
           </div>
         </div>
 
         <div class="hero-orbit">
-          <span>Curious, observant, quietly obsessive about details.</span>
+          <span>Part analyst, part maker, part storyteller.</span>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS / HIGHLIGHTS -->
-    <section id="skills" style="margin-bottom:40px;">
-      <h2 class="section-title">Core themes</h2>
-      <p class="section-sub">A few lanes where I tend to live and experiment.</p>
+    <!-- HIGHLIGHTS -->
+    <section id="highlights" style="margin-bottom:40px;">
+      <h2 class="section-title">Experience highlights</h2>
+      <p class="section-sub">
+        A quick snapshot of how I’ve combined enablement, AI, operations, and creative work.
+      </p>
 
       <div class="card-grid">
         <div class="card">
-          <h3>Enablement & Strategy</h3>
-          <p>Designing metrics, processes, and playbooks that reduce friction and make it easier for teams to do their best work.</p>
+          <h3>AI & Workflow Enablement</h3>
+          <p>
+            Led AI-enabled program operations for legal and security innovation teams, integrating tools
+            like generative AI into workflows, designing training paths, and measuring adoption through
+            KPIs and executive-ready reporting.
+          </p>
           <div class="tag-row">
-            <span class="tag">Metrics & KPIs</span>
-            <span class="tag">Process design</span>
-            <span class="tag">Executive readouts</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>AI & Emerging Tech</h3>
-          <p>Bringing tools like generative AI into workflows thoughtfully—focusing on clarity, ethics, and real-world usefulness.</p>
-          <div class="tag-row">
-            <span class="tag">GenAI for legal</span>
-            <span class="tag">Automation</span>
+            <span class="tag">AI platforms</span>
+            <span class="tag">Metrics & dashboards</span>
             <span class="tag">Change management</span>
           </div>
         </div>
+
         <div class="card">
-          <h3>Facilitation & Feedback</h3>
-          <p>Hosting focus groups, analyzing themes, and turning raw feedback into clear recommendations and experiments.</p>
+          <h3>Training & Teaching</h3>
+          <p>
+            Designed and delivered training modules, tutorial video series, and centralized
+            repositories that supported onboarding, process clarity, and ongoing learning across
+            distributed teams and stakeholders.
+          </p>
           <div class="tag-row">
-            <span class="tag">Focus groups</span>
-            <span class="tag">Trend analysis</span>
-            <span class="tag">Story-driven decks</span>
+            <span class="tag">Curriculum design</span>
+            <span class="tag">Tutorial videos</span>
+            <span class="tag">Knowledge bases</span>
           </div>
         </div>
+
         <div class="card">
-          <h3>Creative & Visual</h3>
-          <p>Photography, video, and small creative experiments that help ideas feel more alive, not just more documented.</p>
+          <h3>Customer & Partner Focus</h3>
+          <p>
+            Supported high-impact escalations, vendor relationships, and cross-functional initiatives —
+            from regulatory correspondence to executive readouts — always centering clear communication
+            and long-term trust.
+          </p>
+          <div class="tag-row">
+            <span class="tag">Customer-centric</span>
+            <span class="tag">Vendor collaboration</span>
+            <span class="tag">Executive communication</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Creative & Technical</h3>
+          <p>
+            Brought creative and technical production together through photography, video,
+            motion, and live-event experience — using visual storytelling to make complex ideas
+            easier to grasp and remember.
+          </p>
           <div class="tag-row">
             <span class="tag">Photo & video</span>
-            <span class="tag">Microsites</span>
-            <span class="tag">Analog + digital</span>
+            <span class="tag">Live production</span>
+            <span class="tag">Visual storytelling</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PLAYGROUND / VIDEO -->
+    <!-- PLAYGROUND -->
     <section id="playground" class="playground">
       <div class="playground-card">
-        <h3>Creative playground</h3>
-        <p>This space can showcase a reel, a motion piece, or a short visual story—whatever best captures how you see and shape the world.</p>
+        <h3>Creative + systems playground</h3>
+        <p>
+          This space is for in-progress ideas — a reel, a walkthrough, or a short narrative that
+          shows how I think through problems and experiments.
+        </p>
 
         <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
           ▶ Example: embedded video from YouTube or Vimeo:
         </p>
         <div class="video-wrapper" style="margin-bottom:16px;">
-          <!-- Replace the src with your own YouTube/Vimeo link -->
+          <!-- TODO: replace src with your own video reel or remove this block entirely -->
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                   title="Sample video"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -573,28 +594,27 @@
           </iframe>
         </div>
 
-        <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
-          ▶ Or: self-hosted video (place a file like <code>my-video.mp4</code> in your repo and uncomment below):
+        <p style="font-size:12px;color:var(--text-muted);">
+          You can also self-host a small MP4 in this repo and swap this iframe for a
+          <code>&lt;video&gt;</code> tag when you’re ready.
         </p>
-
-        <!--
-        <div class="video-wrapper">
-          <video controls>
-            <source src="my-video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        -->
       </div>
 
       <div class="playground-card">
-        <h3>Notes to future collaborators</h3>
-        <p>I care a lot about how things feel—meetings, tools, processes, and the space people are given to think and experiment.</p>
-        <p style="margin-top:6px;">If we work together, expect curiosity, a lot of questions, and a bias toward prototypes over slide decks.</p>
+        <h3>How I like to work</h3>
+        <p>
+          I work best where there’s room for curiosity, structure, and experimentation at the same time:
+          understanding the systems, listening to the humans in them, and building programs that make
+          everyday work feel lighter and clearer.
+        </p>
+        <p style="margin-top:6px;">
+          Expect thoughtful questions, prototypes instead of endless decks, and a focus on making new tools
+          feel less intimidating and more like something people actually enjoy using.
+        </p>
         <div class="tag-row" style="margin-top:10px;">
-          <span class="tag">Thoughtful chaos → structured clarity</span>
-          <span class="tag">“What are we really solving?”</span>
-          <span class="tag">Always learning</span>
+          <span class="tag">Organizer + evangelist</span>
+          <span class="tag">Thoughtful experiments</span>
+          <span class="tag">People-first systems</span>
         </div>
       </div>
     </section>
@@ -602,14 +622,19 @@
     <!-- CONTACT -->
     <section id="contact" style="margin-top:40px;">
       <h2 class="section-title">Let’s connect</h2>
-      <p class="section-sub">If this resonated, here’s where to find me.</p>
+      <p class="section-sub">
+        Open to roles in enablement, AI/technical teaching, customer education, and creative systems work.
+      </p>
 
       <div class="card" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
         <div style="font-size:13px;color:var(--text-muted);flex:1 1 220px;">
-          Best reached via LinkedIn or email—happy to talk about roles, collaborations, or just compare notes on cameras and workflows.
+          Best reached via LinkedIn or email — happy to talk about roles, projects, or how to make
+          complex tools feel more human and approachable.
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <!-- TODO: replace with your actual LinkedIn URL -->
           <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
+          <!-- TODO: replace with your real email -->
           <a class="btn-ghost" href="mailto:example@email.com">✉️ Email</a>
         </div>
       </div>
@@ -618,8 +643,8 @@
   </main>
 
   <footer>
-    Built as a tiny experimental space on GitHub Pages. <br/>
-    Feel free to poke around the code, remix, or say hello.
+    Built as a small experimental space on GitHub Pages.<br/>
+    Updated as I explore what’s next.
   </footer>
 
 </div>
