@@ -279,21 +279,24 @@
       color: var(--text-muted);
     }
 
+    /* UPDATED hero-orbit */
     .hero-orbit {
       position: absolute;
-      width: 140px;
-      height: 140px;
+      width: 120px;
+      height: 120px;
       border-radius: 999px;
       border: 1px dashed rgba(255, 255, 255, 0.08);
-      top: -12px;
-      right: -18px;
+      top: -26px;
+      right: -32px;
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 10px;
-      font-size: 11px;
+      padding-top: 8px;
+      font-size: 10px;
+      line-height: 1.3;
       color: var(--accent-2);
       text-align: center;
+      background: radial-gradient(circle at center, rgba(5,8,22,0.85), rgba(5,8,22,0));
     }
 
     .section-title {
@@ -372,26 +375,6 @@
       margin-bottom: 10px;
     }
 
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-soft);
-      background: #000;
-    }
-
-    .video-wrapper iframe,
-    .video-wrapper video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
     footer {
       padding: 24px 16px 32px;
       text-align: center;
@@ -416,6 +399,11 @@
 
       nav {
         flex-wrap: wrap;
+      }
+
+      /* Hide orbit text on smaller screens */
+      .hero-orbit {
+        display: none;
       }
     }
   </style>
@@ -465,12 +453,11 @@
 
         <div class="hero-cta">
           <!-- TODO: replace # with a real resume link (e.g., your hosted PDF) -->
-       <a class="btn-primary" href="./Shaun-Resume-2025-2026.pdf" target="_blank">
-  📄 View Resume
-</a>
-
+          <a class="btn-primary" href="https://docs.google.com/document/d/1cYUgWKku6auHh6qR8afRvy-oFD6x0iM8nmQWWbo-GZY/edit?usp=sharing" target="_blank">
+            📄 Download résumé
+          </a>
           <!-- TODO: replace with your real LinkedIn URL -->
-          <a class="btn-ghost" href="https://www.linkedin.com/in/shaunandruchuk/" target="_blank">
+          <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">
             💼 View LinkedIn
           </a>
         </div>
@@ -482,12 +469,12 @@
             <div style="display:flex;align-items:center;gap:10px;">
               <div class="hero-avatar">A</div>
               <div style="font-size: 12px;">
-                <strong>Enablement & AI Programs</strong><br />
+                <strong>Enablement &amp; AI Programs</strong><br />
                 Fortune 50 telecom heritage
               </div>
             </div>
             <div style="font-size:11px;color:var(--text-muted);text-align:right;">
-              Roles & impact across<br/>legal, CX, and creative work.
+              Roles &amp; impact across<br/>legal, CX, and creative work.
             </div>
           </div>
           <div class="hero-card-main">
@@ -497,7 +484,7 @@
             <div class="hero-card-tags">
               <span class="chip">AI in legal workflows</span>
               <span class="chip">Program operations</span>
-              <span class="chip">Training & video content</span>
+              <span class="chip">Training &amp; video content</span>
             </div>
           </div>
         </div>
@@ -517,7 +504,7 @@
 
       <div class="card-grid">
         <div class="card">
-          <h3>AI & Workflow Enablement</h3>
+          <h3>AI &amp; Workflow Enablement</h3>
           <p>
             Led AI-enabled program operations for legal and security innovation teams, integrating tools
             like generative AI into workflows, designing training paths, and measuring adoption through
@@ -525,13 +512,13 @@
           </p>
           <div class="tag-row">
             <span class="tag">AI platforms</span>
-            <span class="tag">Metrics & dashboards</span>
+            <span class="tag">Metrics &amp; dashboards</span>
             <span class="tag">Change management</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Training & Teaching</h3>
+          <h3>Training &amp; Teaching</h3>
           <p>
             Designed and delivered training modules, tutorial video series, and centralized
             repositories that supported onboarding, process clarity, and ongoing learning across
@@ -545,7 +532,7 @@
         </div>
 
         <div class="card">
-          <h3>Customer & Partner Focus</h3>
+          <h3>Customer &amp; Partner Focus</h3>
           <p>
             Supported high-impact escalations, vendor relationships, and cross-functional initiatives —
             from regulatory correspondence to executive readouts — always centering clear communication
@@ -559,14 +546,14 @@
         </div>
 
         <div class="card">
-          <h3>Creative & Technical</h3>
+          <h3>Creative &amp; Technical</h3>
           <p>
             Brought creative and technical production together through photography, video,
             motion, and live-event experience — using visual storytelling to make complex ideas
             easier to grasp and remember.
           </p>
           <div class="tag-row">
-            <span class="tag">Photo & video</span>
+            <span class="tag">Photo &amp; video</span>
             <span class="tag">Live production</span>
             <span class="tag">Visual storytelling</span>
           </div>
@@ -583,21 +570,9 @@
           shows how I think through problems and experiments.
         </p>
 
-        <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">
-          ▶ Example: embedded video from YouTube or Vimeo:
-        </p>
-        <div class="video-wrapper" style="margin-bottom:16px;">
-          <!-- TODO: replace src with your own video reel or remove this block entirely -->
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Sample video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
-          </iframe>
-        </div>
-
         <p style="font-size:12px;color:var(--text-muted);">
-          You can also self-host a small MP4 in this repo and swap this iframe for a
-          <code>&lt;video&gt;</code> tag when you’re ready.
+          Short reels and walkthroughs coming soon — I use this space to share how I approach systems,
+          teaching, and creative problem solving.
         </p>
       </div>
 
@@ -644,7 +619,7 @@
   </main>
 
   <footer>
-    I built this small experimental space on GitHub Pages.<br/>
+    Built as a small experimental space on GitHub Pages.<br/>
     Updated as I explore what’s next.
   </footer>
 
