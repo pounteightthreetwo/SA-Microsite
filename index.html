@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shaun Andruchuk – Enablement & AI Programs</title>
 
-  <!-- Google Font: Mulish -->
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Mulish (optional, you can swap this) -->
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --bg: #050816;
-      --bg-alt: #0b1023;
+      --bg-alt: #0c1220;
+      --card-bg: #101624;
+      --border: #222738;
       --accent: #ff8a3c;
-      --accent-soft: rgba(255, 138, 60, 0.14);
-      --accent-2: #35c4ff;
-      --text-main: #f5f5f7;
+      --accent-soft: #ffd1a5;
+      --accent-2: #39bdf8;
+      --text-main: #f5f7fb;
       --text-muted: #b3b7c6;
-      --card-bg: #111528;
-      --border-soft: #22263a;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.4);
+      --radius-lg: 14px;
+      --radius-md: 10px;
     }
 
     * {
@@ -32,7 +31,7 @@
 
     body {
       font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: radial-gradient(circle at top left, #18213d, #050816 55%);
+      background: #050816;
       color: var(--text-main);
     }
 
@@ -48,16 +47,21 @@
     }
 
     header {
-      padding: 18px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--border);
+      background: #050816;
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(5,8,22,0.94), rgba(5,8,22,0.76));
-      border-bottom: 1px solid var(--border-soft);
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
 
     .brand {
@@ -69,35 +73,36 @@
     .brand-badge {
       width: 32px;
       height: 32px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #ffcf71, #ff8a3c 55%, #f05454);
+      border-radius: 10px;
+      background: var(--accent);
+      color: #1a1420;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
       font-size: 18px;
-      color: #050816;
-      box-shadow: 0 0 12px rgba(255, 138, 60, 0.6);
     }
 
     .brand-text {
-      display: flex;
-      flex-direction: column;
       font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
+      line-height: 1.3;
     }
 
     .brand-text strong {
+      display: block;
       font-size: 14px;
-      color: var(--text-main);
+    }
+
+    .brand-text span {
+      color: var(--text-muted);
     }
 
     nav {
       display: flex;
-      gap: 18px;
+      gap: 14px;
       font-size: 13px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     nav a {
@@ -105,19 +110,21 @@
       border-radius: 999px;
       border: 1px solid transparent;
       color: var(--text-muted);
-      transition: all 0.2s ease;
     }
 
     nav a:hover {
-      border-color: var(--accent-soft);
-      background: rgba(10, 16, 40, 0.85);
+      border-color: var(--border);
       color: var(--accent-2);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    main {
+      flex: 1;
+      padding: 26px 18px 40px;
     }
 
     .content {
-      flex: 1;
-      padding: 32px 18px 50px;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -126,36 +133,30 @@
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
-      gap: 26px;
+      gap: 24px;
       align-items: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
+    }
+
+    .hero-left {
+      min-width: 0;
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 6px 11px;
-      border-radius: 999px;
-      background: var(--accent-soft);
+      letter-spacing: 0.18em;
       color: var(--accent-2);
-    }
-
-    .hero-tag-dot {
-      width: 7px;
-      height: 7px;
+      padding: 4px 9px;
       border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 9px rgba(255, 138, 60, 0.9);
+      border: 1px solid var(--border);
+      display: inline-block;
     }
 
     .hero-title {
-      font-size: clamp(30px, 4vw, 40px);
-      margin-top: 16px;
-      line-height: 1.1;
+      font-size: clamp(28px, 3.4vw, 36px);
+      margin-top: 14px;
+      line-height: 1.15;
     }
 
     .hero-title span {
@@ -163,103 +164,82 @@
     }
 
     .hero-subtitle {
-      margin-top: 12px;
-      font-size: 16px;
+      margin-top: 10px;
+      font-size: 15px;
       color: var(--text-muted);
       max-width: 520px;
     }
 
     .hero-badges {
-      margin-top: 18px;
+      margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .hero-badge-pill {
-      font-size: 12px;
-      padding: 7px 12px;
+    .hero-pill {
+      font-size: 11px;
+      padding: 6px 11px;
       border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(9, 15, 39, 0.9);
+      border: 1px solid var(--border);
       color: var(--text-muted);
     }
 
     .hero-cta {
-      margin-top: 22px;
+      margin-top: 18px;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #ff8a3c, #ffcf71);
+      background: var(--accent);
       color: #1a1420;
-      padding: 10px 18px;
+      padding: 9px 17px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       border: none;
       cursor: pointer;
-      box-shadow: 0 10px 28px rgba(255, 138, 60, 0.45);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .btn-ghost {
-      padding: 9px 16px;
+      padding: 8px 15px;
       border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      background: rgba(6, 9, 25, 0.9);
+      border: 1px solid var(--border);
+      background: transparent;
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13px;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .hero-right {
-      position: relative;
+      min-width: 0;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, #1b2448, #0a0f23);
-      border-radius: 24px;
-      padding: 18px 18px 22px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-    }
-
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .hero-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(145deg, #ff8a3c, #35c4ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 20px;
-      color: #050816;
-    }
-
-    .hero-card-main {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 14px 14px 16px;
       font-size: 13px;
       color: var(--text-muted);
     }
 
-    .hero-card-main strong {
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .hero-card-role {
+      font-size: 12px;
+    }
+
+    .hero-card-role strong {
+      display: block;
       color: var(--text-main);
     }
 
@@ -274,67 +254,57 @@
       font-size: 11px;
       padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(7, 12, 31, 0.9);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
       color: var(--text-muted);
     }
 
-    /* UPDATED hero-orbit */
-    .hero-orbit {
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      border: 1px dashed rgba(255, 255, 255, 0.08);
-      top: -26px;
-      right: -32px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 8px;
-      font-size: 10px;
-      line-height: 1.3;
+    .small-note {
+      font-size: 11px;
       color: var(--accent-2);
-      text-align: center;
-      background: radial-gradient(circle at center, rgba(5,8,22,0.85), rgba(5,8,22,0));
+      margin-top: 8px;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      margin-bottom: 34px;
     }
 
     .section-title {
-      font-size: 20px;
-      margin-bottom: 6px;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
 
     .section-sub {
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
     }
 
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 16px 16px 18px;
-      border: 1px solid var(--border-soft);
-    }
-
-    .card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .card p {
+      border: 1px solid var(--border);
+      padding: 14px 14px 16px;
       font-size: 13px;
       color: var(--text-muted);
     }
 
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
     .tag-row {
-      margin-top: 10px;
+      margin-top: 8px;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -344,282 +314,271 @@
       font-size: 11px;
       padding: 4px 8px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid var(--border-soft);
+      border: 1px solid var(--border);
       color: var(--text-muted);
     }
 
-    .playground {
-      margin-top: 40px;
+    .playground-grid {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 20px;
-      align-items: flex-start;
+      gap: 16px;
     }
 
-    .playground-card {
+    .contact-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      padding: 16px;
-    }
-
-    .playground-card h3 {
-      font-size: 16px;
-      margin-bottom: 6px;
-    }
-
-    .playground-card p {
+      border: 1px solid var(--border);
+      padding: 14px;
       font-size: 13px;
       color: var(--text-muted);
-      margin-bottom: 10px;
+    }
+
+    .contact-text {
+      flex: 1 1 220px;
     }
 
     footer {
-      padding: 24px 16px 32px;
+      padding: 18px 18px 26px;
       text-align: center;
-      font-size: 12px;
+      font-size: 11px;
       color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--accent-2);
+      border-top: 1px solid var(--border);
+      margin-top: auto;
     }
 
     @media (max-width: 800px) {
-      .hero, .playground {
+      .hero {
         grid-template-columns: 1fr;
       }
-
+      .playground-grid {
+        grid-template-columns: 1fr;
+      }
       header {
+        padding: 12px 16px;
+      }
+      .header-inner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
       }
-
       nav {
-        flex-wrap: wrap;
-      }
-
-      /* Hide orbit text on smaller screens */
-      .hero-orbit {
-        display: none;
+        justify-content: flex-start;
       }
     }
   </style>
 </head>
-
 <body>
 <div class="page">
 
   <header>
-    <div class="brand">
-      <div class="brand-badge">S</div>
-      <div class="brand-text">
-        <strong>Shaun Andruchuk</strong>
-        <span>Enablement · AI · Systems & Story</span>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-badge">S</div>
+        <div class="brand-text">
+          <strong>Shaun Andruchuk</strong>
+          <span>Enablement · AI · Systems & Story</span>
+        </div>
       </div>
-    </div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#highlights">Highlights</a>
-      <a href="#playground">Playground</a>
-      <a href="#contact">Contact</a>
-    </nav>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#playground">Playground</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="content">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div>
-        <div class="hero-tag">
-          <span class="hero-tag-dot"></span>
-          Enablement · AI · Teaching
-        </div>
-        <h1 class="hero-title">
-          Blending <span>systems thinking</span>, emerging tech, and human-centered teaching.
-        </h1>
-        <p class="hero-subtitle">
-          I design and deliver programs that help people understand, trust, and adopt new tools —
-          from AI platforms and legal workflows to creative and customer support ecosystems.
-        </p>
+  <main>
+    <div class="content">
+      <!-- HERO -->
+      <section class="hero" id="about">
+        <div class="hero-left">
+          <div class="hero-tag">ENABLEMENT · AI · TEACHING</div>
+          <h1 class="hero-title">
+            Blending <span>systems thinking</span>, emerging tech, and human-centered teaching.
+          </h1>
+          <p class="hero-subtitle">
+            I design and deliver programs that help people understand, trust, and adopt new tools —
+            from AI platforms and legal workflows to creative and customer support ecosystems.
+          </p>
 
-        <div class="hero-badges">
-          <div class="hero-badge-pill">AI & workflow enablement</div>
-          <div class="hero-badge-pill">Training & adoption strategy</div>
-          <div class="hero-badge-pill">Executive-facing storytelling</div>
+          <div class="hero-badges">
+            <div class="hero-pill">AI &amp; workflow enablement</div>
+            <div class="hero-pill">Training &amp; adoption strategy</div>
+            <div class="hero-pill">Executive-facing storytelling</div>
+          </div>
+
+          <div class="hero-cta">
+            <!-- TODO: update href to your hosted PDF -->
+            <a class="btn-primary" href="#" target="_blank">📄 View résumé</a>
+            <!-- TODO: update to your LinkedIn -->
+            <a class="btn-ghost" href="https://www.linkedin.com/in/shaunandruchuk/" target="_blank">💼 View LinkedIn</a>
+          </div>
         </div>
 
-        <div class="hero-cta">
-          <!-- TODO: replace # with a real resume link (e.g., your hosted PDF) -->
-          <a class="btn-primary" href="https://docs.google.com/document/d/1cYUgWKku6auHh6qR8afRvy-oFD6x0iM8nmQWWbo-GZY/edit?usp=sharing" target="_blank">
-            📄 Download résumé
-          </a>
-          <!-- TODO: replace with your real LinkedIn URL -->
-          <a class="btn-ghost" href="https://www.linkedin.com" target="_blank">
-            💼 View LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div style="display:flex;align-items:center;gap:10px;">
-              <div class="hero-avatar">A</div>
-              <div style="font-size: 12px;">
-                <strong>Enablement &amp; AI Programs</strong><br />
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <div class="hero-card-role">
+                <strong>Enablement &amp; AI Programs</strong>
                 Fortune 50 telecom heritage
               </div>
+              <div style="text-align:right; font-size:11px; color:var(--text-muted);">
+                Roles &amp; impact across<br>legal, CX, and creative work.
+              </div>
             </div>
-            <div style="font-size:11px;color:var(--text-muted);text-align:right;">
-              Roles &amp; impact across<br/>legal, CX, and creative work.
-            </div>
-          </div>
-          <div class="hero-card-main">
-            I bring a rare blend of fluency across systems, people, and design — shaped through
-            operations leadership, vendor partnerships, training, and creative production. I learn
-            platforms deeply so I can teach them clearly and help teams adopt them without friction.
+            <p>
+              I bring a rare blend of fluency across systems, people, and design — shaped through
+              operations leadership, vendor partnerships, training, and creative production. I learn
+              platforms deeply so I can teach them clearly and help teams adopt them without friction.
+            </p>
             <div class="hero-card-tags">
               <span class="chip">AI in legal workflows</span>
               <span class="chip">Program operations</span>
               <span class="chip">Training &amp; video content</span>
             </div>
+            <div class="small-note">
+              Part analyst, part maker, part storyteller.
+            </div>
           </div>
         </div>
+      </section>
 
-        <div class="hero-orbit">
-        </div>
-      </div>
-    </section>
-
-    <!-- HIGHLIGHTS -->
-    <section id="highlights" style="margin-bottom:40px;">
-      <h2 class="section-title">Experience highlights</h2>
-      <p class="section-sub">
-        A quick snapshot of how I’ve combined enablement, AI, operations, and creative work.
-      </p>
-
-      <div class="card-grid">
-        <div class="card">
-          <h3>AI &amp; Workflow Enablement</h3>
-          <p>
-            Led AI-enabled program operations for legal and security innovation teams, integrating tools
-            like generative AI into workflows, designing training paths, and measuring adoption through
-            KPIs and executive-ready reporting.
-          </p>
-          <div class="tag-row">
-            <span class="tag">AI platforms</span>
-            <span class="tag">Metrics &amp; dashboards</span>
-            <span class="tag">Change management</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Training &amp; Teaching</h3>
-          <p>
-            Designed and delivered training modules, tutorial video series, and centralized
-            repositories that supported onboarding, process clarity, and ongoing learning across
-            distributed teams and stakeholders.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Curriculum design</span>
-            <span class="tag">Tutorial videos</span>
-            <span class="tag">Knowledge bases</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Customer &amp; Partner Focus</h3>
-          <p>
-            Supported high-impact escalations, vendor relationships, and cross-functional initiatives —
-            from regulatory correspondence to executive readouts — always centering clear communication
-            and long-term trust.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Customer-centric</span>
-            <span class="tag">Vendor collaboration</span>
-            <span class="tag">Executive communication</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Creative &amp; Technical</h3>
-          <p>
-            Brought creative and technical production together through photography, video,
-            motion, and live-event experience — using visual storytelling to make complex ideas
-            easier to grasp and remember.
-          </p>
-          <div class="tag-row">
-            <span class="tag">Photo &amp; video</span>
-            <span class="tag">Live production</span>
-            <span class="tag">Visual storytelling</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLAYGROUND -->
-    <section id="playground" class="playground">
-      <div class="playground-card">
-        <h3>Creative + systems playground</h3>
-        <p>
-          This space is for in-progress ideas — a reel, a walkthrough, or a short narrative that
-          shows how I think through problems and experiments.
+      <!-- HIGHLIGHTS -->
+      <section class="section" id="highlights">
+        <h2 class="section-title">Experience highlights</h2>
+        <p class="section-sub">
+          A quick snapshot of how I’ve combined enablement, AI, operations, and creative work.
         </p>
 
-        <p style="font-size:12px;color:var(--text-muted);">
-          Short reels and walkthroughs coming soon — I use this space to share how I approach systems,
-          teaching, and creative problem solving.
-        </p>
-      </div>
+        <div class="card-grid">
+          <div class="card">
+            <h3>AI &amp; Workflow Enablement</h3>
+            <p>
+              Led AI-enabled program operations for legal and security innovation teams, integrating tools
+              like generative AI into workflows, designing training paths, and measuring adoption through
+              KPIs and executive-ready reporting.
+            </p>
+            <div class="tag-row">
+              <span class="tag">AI platforms</span>
+              <span class="tag">Metrics &amp; dashboards</span>
+              <span class="tag">Change management</span>
+            </div>
+          </div>
 
-      <div class="playground-card">
-        <h3>How I like to work</h3>
-        <p>
-          I work best where there’s room for curiosity, structure, and experimentation at the same time:
-          understanding the systems, listening to the humans in them, and building programs that make
-          everyday work feel lighter and clearer.
-        </p>
-        <p style="margin-top:6px;">
-          Expect thoughtful questions, prototypes instead of endless decks, and a focus on making new tools
-          feel less intimidating and more like something people actually enjoy using.
-        </p>
-        <div class="tag-row" style="margin-top:10px;">
-          <span class="tag">Organizer + evangelist</span>
-          <span class="tag">Thoughtful experiments</span>
-          <span class="tag">People-first systems</span>
+          <div class="card">
+            <h3>Training &amp; Teaching</h3>
+            <p>
+              Designed and delivered training modules, tutorial video series, and centralized repositories
+              that supported onboarding, process clarity, and ongoing learning across distributed teams and
+              stakeholders.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Curriculum design</span>
+              <span class="tag">Tutorial videos</span>
+              <span class="tag">Knowledge bases</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Customer &amp; Partner Focus</h3>
+            <p>
+              Supported high-impact escalations, vendor relationships, and cross-functional initiatives —
+              from regulatory correspondence to executive readouts — always centering clear communication
+              and long-term trust.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Customer-centric</span>
+              <span class="tag">Vendor collaboration</span>
+              <span class="tag">Executive communication</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Creative &amp; Technical</h3>
+            <p>
+              Brought creative and technical production together through photography, video, motion,
+              and live-event experience — using visual storytelling to make complex ideas easier to grasp
+              and remember.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Photo &amp; video</span>
+              <span class="tag">Live production</span>
+              <span class="tag">Visual storytelling</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" style="margin-top:40px;">
-      <h2 class="section-title">Let’s connect</h2>
-      <p class="section-sub">
-        Open to roles in enablement, AI/technical teaching, customer education, and creative systems work.
-      </p>
+      <!-- PLAYGROUND -->
+      <section class="section" id="playground">
+        <h2 class="section-title">Playground</h2>
+        <p class="section-sub">
+          A small space for how I think about systems, teaching, and creative problem solving.
+        </p>
 
-      <div class="card" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;">
-        <div style="font-size:13px;color:var(--text-muted);flex:1 1 220px;">
-          Best reached via LinkedIn or email — happy to talk about roles, projects, or how to make
-          complex tools feel more human and approachable.
+        <div class="playground-grid">
+          <div class="card">
+            <h3>Creative + systems playground</h3>
+            <p>
+              This space is for in-progress ideas — a reel, a walkthrough, or a short narrative that shows
+              how I think through problems and experiments.
+            </p>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:6px;">
+              Short reels and walkthroughs coming soon. I use this space to share how I approach systems,
+              teaching, and creative problem solving in a practical, human-centered way.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>How I like to work</h3>
+            <p>
+              I work best where there’s room for curiosity, structure, and experimentation at the same time:
+              understanding the systems, listening to the humans in them, and building programs that make
+              everyday work feel lighter and clearer.
+            </p>
+            <p style="margin-top:6px;">
+              Expect thoughtful questions, prototypes instead of endless decks, and a focus on making new
+              tools feel less intimidating and more like something people actually enjoy using.
+            </p>
+            <div class="tag-row" style="margin-top:8px;">
+              <span class="tag">Organizer + evangelist</span>
+              <span class="tag">Thoughtful experiments</span>
+              <span class="tag">People-first systems</span>
+            </div>
+          </div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <!-- TODO: replace with your actual LinkedIn URL -->
-          <a class="btn-ghost" href="https://www.linkedin.com/in/shaunandruchuk/" target="_blank">💼 LinkedIn</a>
-          <!-- TODO: replace with your real email -->
-          <a class="btn-ghost" href="mailto:shaun.andruchuk@gmail.com">✉️ Email</a>
-        </div>
-      </div>
-    </section>
+      </section>
 
+      <!-- CONTACT -->
+      <section class="section" id="contact">
+        <h2 class="section-title">Let’s connect</h2>
+        <p class="section-sub">
+          Open to roles in enablement, AI/technical teaching, customer education, and creative systems work.
+        </p>
+
+        <div class="contact-card">
+          <div class="contact-text">
+            Best reached via LinkedIn or email — happy to talk about roles, projects, or how to make
+            complex tools feel more human and approachable.
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <!-- TODO: replace with your actual LinkedIn URL -->
+            <a class="btn-ghost" href="https://www.linkedin.com/in/shaunandruchuk/" target="_blank">💼 LinkedIn</a>
+            <!-- TODO: replace with your real email -->
+            <a class="btn-ghost" href="mailto:shaun.andruchuk@gmail.com">✉️ Email</a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
-    Built as a small experimental space on GitHub Pages.<br/>
-    Updated as I explore what’s next.
+    Built as a small experimental space on GitHub Pages. Updated as I explore what’s next.
   </footer>
 
 </div>
